@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>胡家荣</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        /* 引入字体 */
+        @font-face {
+            font-family: "圆体";
+            src: url("圆体.ttf") format("truetype");
+        }
+
+        body {
+            /* 禁止选中 */
+            user-select: none;
+            /* 设置字体 */
+            font-family: "圆体", sans-serif;
+            /* 文本颜色 */
+            color: #fff;
+
+        }
+
+        #动态背景 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(60deg, #8e44ad, #3498db, #c0392b);
+            background-size: 300% 300%;
+            animation: DynamicGradient 5s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes DynamicGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+
+        #头像 {
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 50%;
+            height: 150px;
+            margin: 0 auto;
+            object-fit: cover;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.957);
+            position: absolute;
+            top: 30%;
+            left: 0;
+            right: 0;
+
+        }
+
+        #名字 {
+            font-size: 30px;
+            position: fixed;
+            bottom: 170px;
+            left: 46.5%;
+            transform: translateX(-50%);
+        }
+
+
+        #一言 {
+            font-size: 20px;
+            position: fixed;
+            bottom: 80px;
+            left: 51%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="动态背景"></div>
+    <img class="animate__animated animate__pulse" id="头像" src="家荣.png">
+    <div class="容器">
+        <div class="animate__animated animate__flip" id="名字">胡家荣</div>
+    </div>
+    <div id="一言">
+        <p class="animate__animated animate__fadeInDown" id="jinrishici-sentence"></p>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    </div>
+
+
+</body>
+
+</html>
