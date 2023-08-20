@@ -1,0 +1,772 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 0;
+    height: 0;
+}
+
+* {
+    scroll-behavior: smooth;
+    letter-spacing: 0.1rem;
+    font-family: "微软雅黑";
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: rgb(10, 25, 47);
+    color: rgb(204, 214, 246);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#背景:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+    opacity: 0.2;
+    background: url(星空背景.png) center/cover no-repeat;
+}
+
+
+
+
+
+
+
+
+
+h1 {
+    font-size: 16px;
+    color: rgb(100, 255, 218);
+    -webkit-animation: 右进入 1s;
+    animation: 右进入 1s;
+}
+
+h2 {
+    color: rgb(225, 232, 255);
+    font-size: 50px;
+    margin: 0;
+    transform: translateX(-30px);
+}
+
+h2 span {
+    color: rgb(100, 255, 218);
+    font-size: 50px;
+    margin: 0;
+    filter: drop-shadow(0 0 3px #64ffdb);
+}
+
+#介绍 {
+    margin-top: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#介绍:hover {
+    margin-top: 20px;
+    font-weight: 500;
+    filter: drop-shadow(0 0 3px #64ffdb);
+}
+
+
+#按钮 {
+    margin-top: 50px;
+    font-weight: 600;
+    border: solid 1px rgb(100, 255, 218);
+    color: rgb(100, 255, 218);
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    right: 40%;
+    top: 65%;
+    border-radius: 10px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+#按钮:hover {
+    background-color: rgba(100, 255, 219, 0.133);
+    filter: drop-shadow(0 0 10px #64ffdb);
+    backdrop-filter: blur(10px);
+}
+
+
+#卡片 {
+    border-radius: 2vh;
+    height: 20%;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+
+}
+
+
+
+
+
+#详细 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: rgb(10, 25, 47);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+}
+
+#详细 .背景 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 10px #64ffdb);
+    opacity: 0.7;
+}
+
+
+
+.详细页显示 {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.详细页隐藏 {
+    z-index: -10;
+    border-radius: 5px;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+}
+
+h4 {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.底部线条 {
+    width: 90px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: rgb(100, 255, 218);
+    margin-bottom: 30px;
+}
+
+#作品页 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#作品 {
+    max-width: 600px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+.作品卡,
+.友情卡 {
+    font-size: 20px;
+    margin: 10px;
+    position: relative;
+    width: 230px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.103);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 20px 10px;
+    backdrop-filter: blur(15px);
+}
+
+.项目已完成:hover {
+    -webkit-box-shadow: 0 0 10px rgb(100, 255, 218);
+    box-shadow: 0 0 10px rgb(100, 255, 218);
+    filter: drop-shadow(0 0 10px #64ffdb);
+}
+
+.项目制作中:hover {
+    -webkit-box-shadow: 0 0 10px rgb(255, 255, 0);
+    box-shadow: 0 0 10px rgb(255, 255, 0);
+    filter: drop-shadow(0 0 5px rgb(255, 255, 0));
+}
+
+.已完成::after {
+    content: "已完成";
+    font-size: 10px;
+    color: rgb(100, 255, 218);
+    border-radius: 5px;
+    background-color: rgba(100, 255, 219, 0.214);
+    padding: 5px;
+
+}
+
+.制作中::after {
+    content: "制作中";
+    font-size: 10px;
+    color: rgb(255, 255, 0);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 0, 0.208);
+    padding: 5px;
+
+}
+
+.作品卡 img {
+    font-size: 20px;
+    color: #58a6ff;
+    text-align: center;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5px;
+    position: relative;
+    font-weight: 400;
+    height: 70px;
+    width: 70px;
+    filter: drop-shadow(0 0 5px rgba(100, 255, 219, 0.244));
+}
+
+.作品卡 .作品名 {
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    color: rgb(100, 255, 218);
+    font-weight: bold;
+}
+
+.作品卡 .简介 {
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 20px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 6px;
+    max-width: 200px;
+}
+
+
+#友情链接 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#链接 {
+    max-width: 600px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+
+.友情卡:hover {
+   -webkit-box-shadow: 0 0 10px rgb(61, 255, 210);
+    box-shadow: 0 0 10px rgb(61, 255, 210);
+    filter: drop-shadow(0 0 5px #64ffdb);
+}
+
+.友情卡 img {
+    border-radius: 10px;
+    font-size: 20px;
+    color: #58a6ff;
+    text-align: center;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5px;
+    position: relative;
+    font-weight: 400;
+    height: 70px;
+    width: 70px;
+    filter: drop-shadow(0 0 5px rgb(100, 255, 219));
+
+}
+
+.友情卡 .名字 {
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    color: rgb(100, 255, 218);
+    font-weight: bold;
+}
+
+.友情卡 .简介 {
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 20px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 6px;
+    max-width: 200px;
+}
+
+
+
+
+
+#关闭 svg {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    z-index: 999;
+}
+
+#关闭 svg:hover {
+    filter: drop-shadow(0 0 5px #64ffdb);
+}
+
+
+
+
+
+
+.左进入 {
+    -webkit-animation: 左进入 1s;
+    animation: 左进入 1s;
+}
+
+.右进入 {
+    -webkit-animation: 右进入 1s;
+    animation: 右进入 1s;
+}
+
+
+@-webkit-keyframes 左进入 {
+    from {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes 左进入 {
+    from {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes 右进入 {
+    from {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes 右进入 {
+    from {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes 渐显 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes 渐显 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+    #介绍卡 {
+        position: absolute;
+        left: 15%;
+        top: 30%;
+        height: 300px;
+        border-radius: 10px;
+    }
+
+    #名片 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    #拼音 {
+        display: none;
+    }
+
+    #网名 {
+        font-size: 100%;
+        font-weight: bold;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        right: 10%;
+        top: 30px;
+    }
+
+    #黄块 {
+        background-color: rgb(255, 255, 0);
+        width: 5px;
+        height: 20px;
+        margin-right: 10px;
+
+    }
+
+    #头像 {
+        height: 100px;
+        width: 100px;
+    }
+
+}
+
+@media (max-width: 300px) {
+    #介绍卡 {
+        position: absolute;
+        left: 5%;
+        top: 30%;
+        height: 300px;
+        border-radius: 10px;
+    }
+
+}
+
+@media (min-width: 600px) {
+    #介绍卡 {
+        position: absolute;
+        right: 20%;
+        top: 25%;
+        height: 300px;
+        border-radius: 10px;
+    }
+
+    #名片 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        left: 5%;
+        bottom: 30px;
+    }
+
+    #拼音 {
+        font-weight: 1000;
+        font-size: 150%;
+        transform: translate(-50px, -10px);
+    }
+
+    #网名 {
+        font-size: 170%;
+        font-weight: bold;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        left: 10%;
+        top: 30px;
+
+    }
+
+    #头像 {
+        height: 200px;
+        width: 200px;
+    }
+
+
+
+    #黄块 {
+        background-color: rgb(255, 255, 0);
+        width: 7px;
+        height: 30px;
+        margin-right: 10px;
+        box-shadow: 0 0 5px rgb(255, 255, 0);
+        filter: drop-shadow(0 0 5px rgb(255, 255, 0));
+    }
+}
+
+
+
+#头像 svg {
+    transform: translate(-10px, -10px);
+    filter: drop-shadow(0 0 3px #64ffdb);
+}
+
+#黄块 {
+    box-shadow: 0 0 5px rgb(255, 255, 0);
+    filter: drop-shadow(0 0 5px rgb(255, 255, 0));
+}
+
+
+
+
+
+
+#星星容器 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+}
+
+.星星 {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: azure;
+    position: absolute;
+    opacity: 0.5;
+}
+
+
+#封面 {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(10, 25, 47);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+
+#封面 .背景 {
+    width: 300px;
+    height: 300px;
+    filter: drop-shadow(0 0 10px rgb(100, 255, 219));
+}
+
+#封面 .标题 {
+    color: #64ffdb;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    filter: drop-shadow(0 0 10px rgb(100, 255, 219));
+}
+
+
+
+@keyframes 渐隐 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+
+    }
+}
+
+@-webkit-keyframes 渐隐 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+
+    }
+}
